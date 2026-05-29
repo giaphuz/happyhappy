@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎂 Happy Birthday - 30/05</title>
+    <style>
+      :root {
+        --pink: #ff6b9d;
+        --gold: #ffd166;
+        --purple: #c77dff;
+        --blue: #7ec8e3;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 30%,
+          #0f3460 60%,
+          #1a1a2e 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", "Poppins", sans-serif;
+        overflow-x: hidden;
+        position: relative;
+        cursor: default;
+      }
+
+      /* Sparkles background */
+      .sparkles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        animation: sparkleFloat 3s ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes sparkleFloat {
+        0% {
+          opacity: 0;
+          transform: translateY(0) scale(0);
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-120px) scale(1.5);
+        }
+      }
+
+      /* Main card */
+      .main-container {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        padding: 40px 30px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 30px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+          0 25px 60px rgba(0, 0, 0, 0.4),
+          0 0 80px rgba(255, 107, 157, 0.2);
+        max-width: 600px;
+        width: 90%;
+        animation: cardEntry 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+      @keyframes cardEntry {
+        0% {
+          opacity: 0;
+          transform: scale(0.7) translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* Date */
+      .date-display {
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        font-weight: 900;
+        letter-spacing: 3px;
+        background: linear-gradient(135deg, #ffd166, #ff9f43, #ff6b6b, #ffd166);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease infinite;
+        margin-bottom: 5px;
+        text-shadow: none;
+        filter: drop-shadow(0 0 25px rgba(255, 165, 0, 0.5));
+      }
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Happy Birthday text */
+      .birthday-text {
+        font-size: clamp(1.8rem, 5vw, 3.2rem);
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #fff;
+        text-shadow:
+          0 0 10px rgba(255, 107, 157, 0.8),
+          0 0 30px rgba(255, 107, 157, 0.6),
+          0 0 60px rgba(255, 107, 157, 0.4),
+          0 0 100px rgba(255, 107, 157, 0.3);
+        animation: glowPulse 2s ease-in-out infinite;
+        margin-bottom: 8px;
+      }
+      @keyframes glowPulse {
+        0%,
+        100% {
+          text-shadow:
+            0 0 10px rgba(255, 107, 157, 0.8),
+            0 0 30px rgba(255, 107, 157, 0.6),
+            0 0 60px rgba(255, 107, 157, 0.4);
+        }
+        50% {
+          text-shadow:
+            0 0 20px rgba(255, 107, 157, 1),
+            0 0 50px rgba(255, 107, 157, 0.9),
+            0 0 90px rgba(255, 107, 157, 0.7),
+            0 0 140px rgba(255, 107, 157, 0.5);
+        }
+      }
+
+      /* Subtitle */
+      .subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        font-weight: 300;
+      }
+
+      /* Divider */
+      .divider {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #ffd166,
+          #ff9f43,
+          #ffd166,
+          transparent
+        );
+        margin: 0 auto 25px;
+        border-radius: 5px;
+        animation: dividerPulse 2s ease-in-out infinite;
+      }
+      @keyframes dividerPulse {
+        0%,
+        100% {
+          width: 80px;
+          opacity: 0.7;
+        }
+        50% {
+          width: 150px;
+          opacity: 1;
+        }
+      }
+
+      /* QR Section */
+      .qr-section {
+        margin-top: 10px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        display: inline-block;
+      }
+      .qr-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+      .qr-code-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 15px;
+        background: white;
+        padding: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+      .qr-code-img:hover {
+        transform: scale(1.05);
+      }
+      .qr-hint {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        margin-top: 8px;
+        letter-spacing: 1px;
+      }
+
+      /* Balloons */
+      .balloons-container {
+        position: fixed;
+        bottom: -180px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 5;
+      }
+      .balloon {
+        position: absolute;
+        bottom: -180px;
+        width: 60px;
+        height: 80px;
+        border-radius: 50% 50% 45% 45%;
+        animation: floatUp linear infinite;
+        box-shadow: inset -8px -5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .balloon::before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 0 0 50% 50%;
+      }
+      .balloon::after {
+        content: "";
+        position: absolute;
+        bottom: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        background: inherit;
+        border-radius: 50%;
+        box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.9;
+        }
+        25% {
+          transform: translateY(-30vh) translateX(30px) rotate(5deg);
+        }
+        50% {
+          transform: translateY(-60vh) translateX(-20px) rotate(-3deg);
+        }
+        75% {
+          transform: translateY(-85vh) translateX(15px) rotate(4deg);
+        }
+        100% {
+          transform: translateY(-110vh) translateX(-10px) rotate(-2deg);
+          opacity: 0;
+        }
+      }
+
+      /* Confetti canvas */
+      #confettiCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 8;
+      }
+
+      /* Heart decorations */
+      .floating-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 4;
+      }
+      .floating-heart {
+        position: absolute;
+        font-size: 24px;
+        animation: heartFloat 6s ease-in-out infinite;
+        opacity: 0.5;
+      }
+      @keyframes heartFloat {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-60px) rotate(15deg);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.6;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .main-container {
+          padding: 25px 18px;
+          border-radius: 22px;
+        }
+        .qr-code-img {
+          width: 140px;
+          height: 140px;
+        }
+        .balloon {
+          width: 40px;
+          height: 55px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sparkles -->
+    <div class="sparkles" id="sparklesContainer"></div>
+
+    <!-- Floating hearts -->
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <!-- Balloons -->
+    <div class="balloons-container" id="balloonsContainer"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Main Content -->
+    <div class="main-container">
+      <div class="date-display">30/05</div>
+      <div class="birthday-text">🎂 HAPPY BIRTHDAY 🎂</div>
+      <p class="subtitle">Chúc mừng sinh nhật!</p>
+      <div class="divider"></div>
+
+      <!-- QR Code Section -->
+      <div class="qr-section">
+        <p class="qr-label">📱 Quét mã QR để xem bất ngờ!</p>
+        <img
+          id="qrCodeImg"
+          class="qr-code-img"
+          src=""
+          alt="QR Code - Quét để xem"
+          title="Quét mã này để mở thiệp sinh nhật"
+        />
+        <p class="qr-hint">Hãy quét bằng camera điện thoại nhé ✨</p>
+      </div>
+    </div>
+
+    <script>
+      // ==================== TẠO MÃ QR TỰ ĐỘNG ====================
+      (function generateQR() {
+        const currentUrl = window.location.href;
+        const qrImg = document.getElementById("qrCodeImg");
+        // Sử dụng API qrserver để tạo QR code
+        const qrApiUrl =
+          "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+          encodeURIComponent(currentUrl);
+        qrImg.src = qrApiUrl;
+
+        // Fallback nếu ảnh không load được sau 5 giây
+        setTimeout(() => {
+          if (!qrImg.complete || qrImg.naturalWidth === 0) {
+            qrImg.src =
+              "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+              encodeURIComponent(currentUrl) +
+              "&fallback=1";
+          }
+        }, 5000);
+
+        console.log("✅ Mã QR đã được tạo cho URL:", currentUrl);
+        console.log(
+          "📱 Hãy deploy trang web này lên hosting (GitHub Pages, Netlify, Vercel...)",
+        );
+        console.log("   Sau đó gửi mã QR cho bạn của bạn để quét nhé!");
+        console.log(
+          "   Khi mở local (file://), mã QR sẽ trỏ đến file local - chỉ hoạt động sau khi deploy.",
+        );
+      })();
+
+      // ==================== SPARKLES ====================
+      (function createSparkles() {
+        const container = document.getElementById("sparklesContainer");
+        const colors = [
+          "#ffd166",
+          "#ff6b9d",
+          "#c77dff",
+          "#7ec8e3",
+          "#fff",
+          "#ff9f43",
+          "#ff6b6b",
+        ];
+        for (let i = 0; i < 60; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.className = "sparkle";
+          sparkle.style.left = Math.random() * 100 + "%";
+          sparkle.style.top = Math.random() * 100 + "%";
+          sparkle.style.width = 2 + Math.random() * 4 + "px";
+          sparkle.style.height = sparkle.style.width;
+          sparkle.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          sparkle.style.animationDelay = Math.random() * 5 + "s";
+          sparkle.style.animationDuration = 2 + Math.random() * 4 + "s";
+          container.appendChild(sparkle);
+        }
+      })();
+
+      // ==================== FLOATING HEARTS ====================
+      (function createHearts() {
+        const container = document.getElementById("heartsContainer");
+        const heartEmojis = ["❤️", "💕", "💖", "💗", "💝", "✨", "🌟", "💫"];
+        for (let i = 0; i < 15; i++) {
+          const heart = document.createElement("span");
+          heart.className = "floating-heart";
+          heart.textContent =
+            heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+          heart.style.left = 5 + Math.random() * 90 + "%";
+          heart.style.top = 10 + Math.random() * 80 + "%";
+          heart.style.fontSize = 16 + Math.random() * 28 + "px";
+          heart.style.animationDelay = Math.random() * 6 + "s";
+          heart.style.animationDuration = 4 + Math.random() * 8 + "s";
+          heart.style.opacity = 0.3 + Math.random() * 0.5;
+          container.appendChild(heart);
+        }
+      })();
+
+      // ==================== BALLOONS ====================
+      (function createBalloons() {
+        const container = document.getElementById("balloonsContainer");
+        const balloonColors = [
+          "#ff6b9d",
+          "#ff9f43",
+          "#ffd166",
+          "#7ec8e3",
+          "#c77dff",
+          "#ff6b6b",
+          "#48dbfb",
+          "#feca57",
+          "#ff9ff3",
+          "#54a0ff",
+          "#5f27cd",
+          "#01a3a4",
+          "#f368e0",
+          "#ff6348",
+        ];
+        for (let i = 0; i < 20; i++) {
+          const balloon = document.createElement("div");
+          balloon.className = "balloon";
+          balloon.style.left = 2 + Math.random() * 94 + "%";
+          balloon.style.width = 35 + Math.random() * 50 + "px";
+          balloon.style.height = parseFloat(balloon.style.width) * 1.35 + "px";
+          balloon.style.background =
+            balloonColors[Math.floor(Math.random() * balloonColors.length)];
+          balloon.style.animationDuration = 8 + Math.random() * 14 + "s";
+          balloon.style.animationDelay = Math.random() * 10 + "s";
+          container.appendChild(balloon);
+        }
+      })();
+
+      // ==================== CONFETTI CANVAS ====================
+      (function confettiAnimation() {
+        const canvas = document.getElementById("confettiCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const confettiPieces = [];
+        const confettiColors = [
+          "#ff6b9d",
+          "#ffd166",
+          "#c77dff",
+          "#7ec8e3",
+          "#ff9f43",
+          "#ff6b6b",
+          "#48dbfb",
+          "#feca57",
+          "#ff9ff3",
+          "#00d2d3",
+          "#f368e0",
+          "#fff",
+          "#ffbe76",
+          "#badc58",
+          "#e056a0",
+        ];
+
+        class ConfettiPiece {
+          constructor() {
+            this.reset(true);
+          }
+          reset(initial = false) {
+            this.x = Math.random() * canvas.width;
+            this.y = initial
+              ? Math.random() * canvas.height - canvas.height
+              : -20;
+            this.size = 5 + Math.random() * 10;
+            this.color =
+              confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            this.speedY = 1.5 + Math.random() * 3.5;
+            this.speedX = -1 + Math.random() * 2;
+            this.rotation = Math.random() * 360;
+            this.rotationSpeed = -3 + Math.random() * 6;
+            this.opacity = 0.7 + Math.random() * 0.3;
+            this.shape = Math.random() > 0.5 ? "rect" : "circle";
+          }
+          update() {
+            this.y += this.speedY;
+            this.x += this.speedX;
+            this.rotation += this.rotationSpeed;
+            if (this.y > canvas.height + 30) {
+              this.reset();
+            }
+          }
+          draw(ctx) {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate((this.rotation * Math.PI) / 180);
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            if (this.shape === "rect") {
+              ctx.fillRect(
+                -this.size / 2,
+                -this.size / 4,
+                this.size,
+                this.size / 2,
+              );
+            } else {
+              ctx.beginPath();
+              ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+              ctx.fill();
+            }
+            ctx.restore();
+          }
+        }
+
+        // Tạo confetti pieces
+        for (let i = 0; i < 150; i++) {
+          confettiPieces.push(new ConfettiPiece());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          confettiPieces.forEach((piece) => {
+            piece.update();
+            piece.draw(ctx);
+          });
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Resize handler
+        window.addEventListener("resize", () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      })();
+
+      // ==================== AUTO-PLAY NHẠC NHẸ (tùy chọn) ====================
+      // Bỏ comment nếu muốn có nhạc nền Happy Birthday
+      /*
+        (function addMusic() {
+            const audio = document.createElement('audio');
+            audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'; // Thay bằng link nhạc Happy Birthday
+            audio.loop = true;
+            audio.volume = 0.3;
+            audio.autoplay = true;
+            audio.setAttribute('playsinline', '');
+            document.body.appendChild(audio);
+            // Thử play (có thể bị chặn bởi trình duyệt)
+            audio.play().catch(() => {
+                console.log('🎵 Nhấn vào trang để bật nhạc nền');
+                document.addEventListener('click', () => audio.play(), { once: true });
+            });
+        })();
+        */
+
+      console.log("🎂✨ Trang web sinh nhật đã sẵn sàng!");
+      console.log("📱 Deploy lên hosting và gửi mã QR cho bạn của bạn nhé!");
+      console.log(
+        "💡 Gợi ý: Dùng GitHub Pages (miễn phí) để deploy nhanh chóng.",
+      );
+    </script>
+  </body>
+</html>
